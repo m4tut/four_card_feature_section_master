@@ -11,6 +11,8 @@
     --veryDarkBlue: hsl(234, 12%, 34%);
     --grayishBlue: hsl(229, 6%, 66%);
     --veryLightGray: hsl(0, 0%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --whiteGray: hsl(230, 10%, 90%);
 }
 
 *,
@@ -21,9 +23,145 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     font-weight: 400;
     background-color: var(--veryLightGray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* header */
+.header {
+    max-width: 510px;
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 60px;
+}
+
+.header_title {
+    font-size: 2.2rem;
+    color: var(--veryDarkBlue);
+    margin-bottom: 20px;
+}
+
+.header_text {
+    color: var(--grayishBlue);
+}
+
+/* card content */
+.section_card {
+    width: 1140px;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.card_item {
+    height: 250px;
+    width: 350px;
+    border-top: 5px solid;
+    border-radius: 5px;
+    background-color: var(--white);
+    padding: 30px;
+    box-shadow: var(--whiteGray) 0 0 20px;
+    position: relative;
+}
+
+.center_card {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.title_item {
+    color: var(--veryDarkBlue);
+    margin-bottom: 10px;
+}
+
+.text_item {
+    color: var(--grayishBlue);
+    font-size: 0.9rem;
+}
+
+.footer_card {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+/* text settings */
+.fw200 {
+    font-weight: 200;
+}
+
+/* border color */
+.brRed {
+    border-color: var(--red);
+}
+
+.brBlue {
+    border-color: var(--blue);
+}
+
+.brOrange {
+    border-color: var(--orange);
+}
+
+.brCyan {
+    border-color: var(--cyan);
+}
+
+/* media */
+@media (max-width: 1140px) {
+    body {
+        align-items: normal;
+    }
+
+    .container {
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+    .container::after {
+        content: "";
+        display: block;
+        height: 100px;
+        width: 100px;
+    }
+    
+    .header {
+        max-width: 310px;
+    }
+
+    .header_title {
+        font-size: 1.5rem;
+    }
+    
+    .header_text {
+        font-size: 1rem;
+    }
+
+    .section_card {
+        width: 310px;
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+        justify-content: center;
+    }
+
+    .card_item {
+        width: 310px;
+        height: 225px;
+    }
 }
